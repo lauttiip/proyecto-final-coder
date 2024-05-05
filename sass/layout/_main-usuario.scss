@@ -1,12 +1,68 @@
 .main-usuario{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 20% 60% 20%;
     grid-template-rows: repeat(1, 1fr);
-    grid-area: "card sueldo calendario" ;
+    grid-template-areas: "card sueldo calendario" ;
+    margin: 10px;
+    
     .sueldo{
-        grid: sueldo;
+        display: flex;
+        flex-direction: column;
+        grid-area: sueldo;
+        margin: 0 20px;
+        width: 95%;
+        align-items: center;
+        h2{
+            font-size: 3.2rem;
+            color: #091249;
+            width: 60%;
+            text-align: center;
+            text-shadow: -2px 2px 10px #5d5ddf;
+        }
+        .imgSueldo{
+            margin: 20px 0;
+            text-align: center;
+            width: 60%;
+            img{
+            width: 100%;
+            object-fit: cover;
+        }
+        }
+        
     }
     .calendario{
-        grid: calendario;
+        justify-self: center;
+        grid-area: calendario;
+        text-align: center;
+        width: 95%;
+        height: auto;
+        box-shadow: 0px 0px 10px #333;
+        height: 220px;
+        ol{
+            width: 100%;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            padding: 0 5px;
+            li{
+                
+                text-align: center;
+            }
+            .nombre-dia{
+                background-color:  #eee;
+                font-weight:bold;
+                text-align: center;
+            }
+            .first-day{
+                grid-column-start: 3;
+            }
+            .feriado-dia{
+                border-radius: 100px;
+                background-color: #3737ad;
+                color: white;
+                cursor: pointer;
+            }
+        }
     }
 }

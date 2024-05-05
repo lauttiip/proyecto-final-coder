@@ -13,7 +13,7 @@ body {
 
 .header-user {
   height: 60px;
-  background-color: #6f9cebb9;
+  background-color: #5353f3;
   align-content: center; }
   .header-user div {
     display: flex;
@@ -23,7 +23,7 @@ body {
     .header-user div img {
       width: 40px; }
     .header-user div a img {
-      filter: drop-shadow(0px 0px 5px #880101); }
+      filter: drop-shadow(0px 0px 5px #012588); }
 
 .main-login {
   display: flex;
@@ -168,13 +168,112 @@ body {
 
 .main-usuario {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 20% 60% 20%;
   grid-template-rows: repeat(1, 1fr);
-  grid-area: "card sueldo calendario"; }
+  grid-template-areas: "card sueldo calendario";
+  margin: 10px; }
   .main-usuario .sueldo {
-    grid: sueldo; }
+    display: flex;
+    flex-direction: column;
+    grid-area: sueldo;
+    margin: 0 20px;
+    width: 95%;
+    align-items: center; }
+    .main-usuario .sueldo h2 {
+      font-size: 3.2rem;
+      color: #091249;
+      width: 60%;
+      text-align: center;
+      text-shadow: -2px 2px 10px #5d5ddf; }
+    .main-usuario .sueldo .imgSueldo {
+      margin: 20px 0;
+      text-align: center;
+      width: 60%; }
+      .main-usuario .sueldo .imgSueldo img {
+        width: 100%;
+        object-fit: cover; }
   .main-usuario .calendario {
-    grid: calendario; }
+    justify-self: center;
+    grid-area: calendario;
+    text-align: center;
+    width: 95%;
+    height: auto;
+    box-shadow: 0px 0px 10px #333;
+    height: 220px; }
+    .main-usuario .calendario ol {
+      width: 100%;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      padding: 0 5px; }
+      .main-usuario .calendario ol li {
+        text-align: center; }
+      .main-usuario .calendario ol .nombre-dia {
+        background-color: #eee;
+        font-weight: bold;
+        text-align: center; }
+      .main-usuario .calendario ol .first-day {
+        grid-column-start: 3; }
+      .main-usuario .calendario ol .feriado-dia {
+        border-radius: 100px;
+        background-color: #3737ad;
+        color: white;
+        cursor: pointer; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+  margin: 0 20px;
+  border-top: 2px solid #5353f3; }
+  footer .contact-info {
+    text-align: left; }
+  footer .social-links a {
+    text-decoration: none;
+    margin: 0 10px; }
+    footer .social-links a img {
+      width: 30px; }
 
 .card-user {
-  width: 300px; }
+  grid-area: card;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 700px; }
+  .card-user img {
+    width: 100%;
+    animation-name: fondoRgb;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 0s; }
+  .card-user .info {
+    text-align: center; }
+    .card-user .info div {
+      margin: 20px 0 0 10px;
+      padding: 2px 7px;
+      border-bottom: 2px solid #2b2b97;
+      border-left: 2px solid #2b2b97;
+      box-shadow: -2px 2px 5px 0px #2b2b97; }
+      .card-user .info div label {
+        font-weight: bolder;
+        font-size: 1.7rem; }
+      .card-user .info div span {
+        text-align: left;
+        font-weight: 500; }
+
+@keyframes fondoRgb {
+  0% {
+    filter: drop-shadow(4px -4px 12px #0B2447); }
+  25% {
+    filter: drop-shadow(4px 4px 12px #19376D); }
+  50% {
+    filter: drop-shadow(-4px 4px 12px #576CBC); }
+  75% {
+    filter: drop-shadow(-4px -4px 12px #A5D7E8); }
+  100% {
+    filter: drop-shadow(4px -4px 12px #0B2447); } }
