@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*utilities*/
 /*bases*/
 @import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kode+Mono:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedan:ital@0;1&display=swap");
@@ -13,7 +14,7 @@ body {
 
 .header-user {
   height: 60px;
-  background-color: #5353f3;
+  background-image: linear-gradient(to right, #378CE7, #5356FF, #5356FF, #378CE7);
   align-content: center; }
   .header-user div {
     display: flex;
@@ -23,7 +24,27 @@ body {
     .header-user div img {
       width: 40px; }
     .header-user div a img {
-      filter: drop-shadow(0px 0px 5px #012588); }
+      filter: drop-shadow(0px 0px 5px #378CE7 1, 37, 136); }
+      .header-user div a img:hover {
+        transform: scale(1.1); }
+
+.header-admin {
+  grid-area: header-admin;
+  height: 100%;
+  background-color: #3060a8;
+  align-content: center; }
+  .header-admin div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px; }
+    .header-admin div h2 {
+      color: azure; }
+    .header-admin div a img {
+      width: 40px;
+      filter: drop-shadow(0px 0px 5px #378CE7 1, 37, 136); }
+      .header-admin div a img:hover {
+        transform: scale(1.1); }
 
 .main-login {
   display: flex;
@@ -135,8 +156,31 @@ body {
   background-image: url("../assets/fondoLogin.png");
   background-repeat: no-repeat;
   background-size: cover;
-  align-content: center; }
-  .body-seleccion div {
+  align-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 94% auto;
+  grid-template-areas: "botones" "footer"; }
+  .body-seleccion .volver-atras {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    height: 30px; }
+    .body-seleccion .volver-atras a {
+      display: flex;
+      color: #000000d5;
+      text-decoration: none;
+      height: 100%; }
+      .body-seleccion .volver-atras a h4 {
+        height: 100%;
+        font-size: 20px;
+        font-weight: 600; }
+      .body-seleccion .volver-atras a img {
+        height: 100%; }
+      .body-seleccion .volver-atras a:hover {
+        transform: scale(1.1); }
+  .body-seleccion .seleccion-botones {
+    grid-area: botones;
     width: 25%;
     height: 550px;
     margin: auto;
@@ -150,7 +194,7 @@ body {
     color: #fff;
     border-radius: 10px;
     padding: 120px 40px; }
-    .body-seleccion div button {
+    .body-seleccion .seleccion-botones button {
       padding: 15px 30px;
       background: #020727d5;
       border: none;
@@ -161,81 +205,253 @@ body {
       font-size: 3rem;
       color: #ffffff;
       font-weight: 600; }
-      .body-seleccion div button:hover {
+      .body-seleccion .seleccion-botones button:hover {
         background: #0000009d;
         transition: 0.5s;
         font-size: 3.2rem; }
 
 .main-usuario {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  width: 100%;
+  grid-template-columns: 30% 45% auto;
   grid-template-rows: repeat(1, 1fr);
   grid-template-areas: "card sueldo calendario";
-  margin: 10px; }
+  column-gap: 20px;
+  background-image: linear-gradient(to right, #5356FF, #378CE7, #378CE7, #5356FF);
+  background-repeat: no-repeat;
+  background-size: cover; }
   .main-usuario .sueldo {
     display: flex;
     flex-direction: column;
     grid-area: sueldo;
-    margin: 0 20px;
-    width: 95%;
+    margin: 0 10px;
+    width: auto;
     align-items: center; }
     .main-usuario .sueldo h2 {
-      font-size: 3.2rem;
-      color: #091249;
-      width: 60%;
+      font-size: 4.2rem;
+      color: #081355;
+      width: 80%;
       text-align: center;
       text-shadow: -2px 2px 10px #5d5ddf; }
     .main-usuario .sueldo .imgSueldo {
-      margin: 20px 0;
+      margin: 10px 0;
       text-align: center;
-      width: 60%; }
+      width: 100%;
+      animation-name: fondoRgbSueldo;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: 0s; }
       .main-usuario .sueldo .imgSueldo img {
         width: 100%;
         object-fit: cover; }
-  .main-usuario .calendario {
-    justify-self: center;
-    grid-area: calendario;
-    text-align: center;
-    width: 95%;
-    height: auto;
-    box-shadow: 0px 0px 10px #333;
-    height: 220px; }
-    .main-usuario .calendario ol {
-      width: 100%;
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 5px;
-      padding: 0 5px; }
-      .main-usuario .calendario ol li {
-        text-align: center; }
-      .main-usuario .calendario ol .nombre-dia {
-        background-color: #eee;
-        font-weight: bold;
-        text-align: center; }
-      .main-usuario .calendario ol .first-day {
-        grid-column-start: 3; }
-      .main-usuario .calendario ol .feriado-dia {
-        border-radius: 100px;
-        background-color: #3737ad;
-        color: white;
-        cursor: pointer; }
 
-footer {
+@keyframes fondoRgbSueldo {
+  0% {
+    filter: drop-shadow(6px -6px 12px #525252); }
+  25% {
+    filter: drop-shadow(6px 6px 12px #71777c); }
+  50% {
+    filter: drop-shadow(-6px 6px 12px #496d6d); }
+  75% {
+    filter: drop-shadow(-6px -6px 12px #2d4853); }
+  100% {
+    filter: drop-shadow(6px -6px 12px #525252); } }
+  .main-usuario .calendario {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin-top: 30px; }
+    .main-usuario .calendario div {
+      justify-self: center;
+      grid-area: calendario;
+      text-align: center;
+      width: 80%;
+      height: 18%;
+      box-shadow: 0px 0px 10px #333; }
+      .main-usuario .calendario div ol {
+        width: 100%;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        padding: 0 5px; }
+        .main-usuario .calendario div ol li {
+          text-align: center; }
+        .main-usuario .calendario div ol .nombre-dia {
+          background-color: #eee;
+          font-weight: bold;
+          text-align: center;
+          width: 100%; }
+        .main-usuario .calendario div ol .first-day {
+          grid-column-start: 3; }
+        .main-usuario .calendario div ol .feriado-dia {
+          border-radius: 100px;
+          background-color: #3737ad;
+          color: white;
+          cursor: pointer; }
+
+.body-admin {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px auto 6%;
+  grid-template-areas: "header-admin" "main-admin" "footer-admin"; }
+
+.main-admin {
+  grid-area: main-admin;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: start;
+  padding: 30px 0;
+  background-image: radial-gradient(circle, #2A6AB2, #4B63F8, #273c92, #3C81EB); }
+  .main-admin .empleados {
+    width: 70%;
+    height: 700px; }
+    .main-admin .empleados input {
+      width: 25%;
+      height: 45px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      padding-left: 8px;
+      background-color: #194fa0b2;
+      border: 2px solid rgba(31, 31, 170, 0.308);
+      outline: none;
+      border-radius: 5px;
+      color: white;
+      letter-spacing: 2px; }
+      .main-admin .empleados input::placeholder {
+        color: white;
+        letter-spacing: 0px; }
+    .main-admin .empleados .lista-empleados {
+      background-color: rgba(53, 110, 156, 0.432);
+      width: 100%;
+      height: 100%;
+      border: 2px solid black;
+      border: 1px solid #ccc;
+      overflow-y: scroll; }
+      .main-admin .empleados .lista-empleados ol {
+        text-align: center;
+        list-style-type: none;
+        padding: 0; }
+        .main-admin .empleados .lista-empleados ol li {
+          display: grid;
+          grid-template-columns: repeat(6, 17%);
+          justify-items: start;
+          padding: 10px;
+          border-bottom: 1px solid #ddd; }
+          .main-admin .empleados .lista-empleados ol li:last-child {
+            border-bottom: none; }
+          .main-admin .empleados .lista-empleados ol li span {
+            color: white;
+            margin-right: 35px; }
+          .main-admin .empleados .lista-empleados ol li .aprobados::before {
+            font-weight: bold;
+            content: "✔ ";
+            color: green; }
+          .main-admin .empleados .lista-empleados ol li .no-aprobados::before {
+            font-weight: bold;
+            content: "x ";
+            color: red; }
+          .main-admin .empleados .lista-empleados ol li .sueldo {
+            width: 100%;
+            text-align: center;
+            margin-right: 0; }
+        .main-admin .empleados .lista-empleados ol .titulos {
+          font-weight: bold;
+          text-decoration: 1px underline white; }
+  .main-admin .agregar-quitar-admin {
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 95%;
+    justify-content: end; }
+    .main-admin .agregar-quitar-admin a button {
+      font-size: 1.2rem;
+      width: auto;
+      height: 60px;
+      padding: 0 20px;
+      border: 2px solid #161683;
+      border-radius: 20px;
+      background-color: #273c92;
+      color: white;
+      cursor: pointer; }
+      .main-admin .agregar-quitar-admin a button:hover {
+        transform: scale(1.06); }
+    .main-admin .agregar-quitar-admin a .add-button::before {
+      content: "+ ";
+      color: green;
+      font-size: 1.3rem; }
+    .main-admin .agregar-quitar-admin a .remove-button::before {
+      content: "- ";
+      color: red;
+      font-size: 1.3rem; }
+
+.footer-admin {
+  grid-area: footer-admin; }
+
+.footer-usuario {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   font-weight: 500;
-  margin: 0 20px;
-  border-top: 2px solid #5353f3; }
-  footer .contact-info {
+  padding: 5px 20px;
+  height: auto;
+  background-color: #5356FF; }
+  .footer-usuario .contact-info {
     text-align: left; }
-  footer .social-links a {
+  .footer-usuario .social-links a {
+    height: 100%;
     text-decoration: none;
     margin: 0 10px; }
-    footer .social-links a img {
+    .footer-usuario .social-links a img {
       width: 30px; }
+      .footer-usuario .social-links a img:hover {
+        transform: scale(1.2); }
+
+.footer-seleccion {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+  padding: 5px 20px;
+  height: auto;
+  background-color: #0c0fa72d; }
+  .footer-seleccion .contact-info {
+    text-align: left; }
+  .footer-seleccion .social-links a {
+    height: 100%;
+    text-decoration: none;
+    margin: 0 10px; }
+    .footer-seleccion .social-links a img {
+      width: 30px; }
+      .footer-seleccion .social-links a img:hover {
+        transform: scale(1.2); }
+
+.footer-admin {
+  grid-area: footer-admin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+  padding: 5px 20px;
+  height: auto;
+  background-color: #2A6AB2; }
+  .footer-admin .contact-info {
+    text-align: left; }
+  .footer-admin .social-links a {
+    height: 100%;
+    text-decoration: none;
+    margin: 0 10px; }
+    .footer-admin .social-links a img {
+      width: 30px; }
+      .footer-admin .social-links a img:hover {
+        transform: scale(1.2); }
 
 .card-user {
   grid-area: card;
@@ -245,20 +461,21 @@ footer {
   width: 100%;
   height: 700px; }
   .card-user img {
-    width: 100%;
+    width: 400px;
     animation-name: fondoRgb;
     animation-duration: 3s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-delay: 0s; }
   .card-user .info {
-    text-align: center; }
+    text-align: center;
+    width: 400px; }
     .card-user .info div {
       margin: 20px 0 0 10px;
       padding: 2px 7px;
-      border-bottom: 2px solid #2b2b97;
-      border-left: 2px solid #2b2b97;
-      box-shadow: -2px 2px 5px 0px #2b2b97; }
+      border-bottom: 3px solid #2b2b97;
+      border-left: 3px solid #2b2b97;
+      box-shadow: -3px 3px 5px 3px #282896; }
       .card-user .info div label {
         font-weight: bolder;
         font-size: 1.7rem; }
@@ -268,12 +485,12 @@ footer {
 
 @keyframes fondoRgb {
   0% {
-    filter: drop-shadow(4px -4px 12px #0B2447); }
+    filter: drop-shadow(6px -6px 12px #CDE8E5); }
   25% {
-    filter: drop-shadow(4px 4px 12px #19376D); }
+    filter: drop-shadow(6px 6px 12px #EEF7FF); }
   50% {
-    filter: drop-shadow(-4px 4px 12px #576CBC); }
+    filter: drop-shadow(-6px 6px 12px #7AB2B2); }
   75% {
-    filter: drop-shadow(-4px -4px 12px #A5D7E8); }
+    filter: drop-shadow(-6px -6px 12px #4D869C); }
   100% {
-    filter: drop-shadow(4px -4px 12px #0B2447); } }
+    filter: drop-shadow(6px -6px 12px #CDE8E5); } }

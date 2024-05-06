@@ -1,20 +1,83 @@
-footer{
+
+.footer-usuario{
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     font-weight: 500;
-    margin: 0 20px;
-    border-top: 2px solid #5353f3;
+    padding: 5px 20px;
+    height: auto;
+    background-color: #5356FF;
     .contact-info{
         text-align: left;
     }
     .social-links{
         a{
+            height: 100%;
             text-decoration: none;
             margin: 0 10px;
             img{
                 width: 30px;
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+.footer-seleccion{
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+    padding: 5px 20px;
+    height: auto;
+    background-color: #0c0fa72d; 
+
+    .contact-info{
+        text-align: left;
+    }
+    .social-links{
+        a{
+            height: 100%;
+            text-decoration: none;
+            margin: 0 10px;
+            img{
+                width: 30px;
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+.footer-admin{
+    grid-area: footer-admin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+    padding: 5px 20px;
+    height: auto;
+    background-color: #2A6AB2; 
+
+    .contact-info{
+        text-align: left;
+    }
+    .social-links{
+        a{
+            height: 100%;
+            text-decoration: none;
+            margin: 0 10px;
+            img{
+                width: 30px;
+                &:hover{
+                    transform: scale(1.2);
+                }
             }
         }
     }
