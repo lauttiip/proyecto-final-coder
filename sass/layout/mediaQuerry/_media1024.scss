@@ -1,9 +1,4 @@
 @media(max-width:1024px){
-    .body-seleccion{
-        .seleccion-botones{
-            width: 45%;
-        }
-    }
     .main-usuario{
         .calendario{
             height: 170px;
@@ -17,6 +12,35 @@
                 }
             }
             
+        }
+    }
+
+    .main-admin{
+        flex-direction: column;
+        padding-top: 20px ;
+        .empleados{
+            width: 95%;
+            height: 800px;
+            
+        }
+        .agregar-quitar-admin{
+            flex-direction: row;
+            gap: 20px;
+            margin: 20px;
+            height: auto;
+        }
+    }
+
+
+    .body-seleccion{
+        .main-seleccion{
+            div{
+                a{
+                    button{
+                        font-size: 2.3rem;
+                    }
+                }
+            }
         }
     }
 }

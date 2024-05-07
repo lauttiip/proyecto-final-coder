@@ -12,6 +12,23 @@ body {
   width: 100%;
   height: 100vh; }
 
+.header-seleccion {
+  grid-area: header-seleccion;
+  padding: 10px; }
+  .header-seleccion div {
+    height: 30px; }
+    .header-seleccion div a {
+      display: flex;
+      color: #000000d5;
+      text-decoration: none;
+      height: 100%; }
+      .header-seleccion div a h4 {
+        height: 100%;
+        font-size: 20px;
+        font-weight: 600; }
+      .header-seleccion div a img {
+        height: 100%; }
+
 .header-user {
   height: 60px;
   background-image: linear-gradient(to right, #378CE7, #5356FF, #5356FF, #378CE7);
@@ -163,57 +180,44 @@ body {
   align-content: center;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 94% auto;
-  grid-template-areas: "botones" "footer"; }
-  .body-seleccion .volver-atras {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    height: 30px; }
-    .body-seleccion .volver-atras a {
-      display: flex;
-      color: #000000d5;
-      text-decoration: none;
-      height: 100%; }
-      .body-seleccion .volver-atras a h4 {
-        height: 100%;
-        font-size: 20px;
-        font-weight: 600; }
-      .body-seleccion .volver-atras a img {
-        height: 100%; }
-      .body-seleccion .volver-atras a:hover {
-        transform: scale(1.1); }
-  .body-seleccion .seleccion-botones {
-    grid-area: botones;
-    width: 35%;
-    height: 550px;
-    margin: auto;
+  grid-template-rows: 7% 85%  8%;
+  grid-template-areas: "header-seleccion" "main-seleccion" "footer-seleccion"; }
+  .body-seleccion .main-seleccion {
+    grid-area: main-seleccion;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    background: transparent;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 125px 10px #010102;
-    color: #fff;
-    border-radius: 10px;
-    padding: 120px 40px; }
-    .body-seleccion .seleccion-botones button {
-      width: 100%;
-      padding: 15px 30px;
-      background: #020727d5;
-      border: none;
-      outline: none;
-      border-radius: 2.5rem;
-      box-shadow: 0 0 15px #141414;
-      cursor: pointer;
-      font-size: 3rem;
-      color: #ffffff;
-      font-weight: 600; }
-      .body-seleccion .seleccion-botones button:hover {
-        background: #0000009d;
-        transition: 0.5s;
-        font-size: 3.2rem; }
+    justify-content: center; }
+    .body-seleccion .main-seleccion div {
+      width: 40%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 125px 10px #010102;
+      color: #fff;
+      border-radius: 10px;
+      padding: 100px 40px; }
+      .body-seleccion .main-seleccion div a {
+        width: 100%;
+        text-align: center; }
+        .body-seleccion .main-seleccion div a button {
+          padding: 15px 30px;
+          background: #020727d5;
+          border: none;
+          outline: none;
+          border-radius: 2.5rem;
+          box-shadow: 0 0 15px #141414;
+          cursor: pointer;
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 3rem; }
+          .body-seleccion .main-seleccion div a button:hover {
+            background: #0000009d;
+            transition: 0.5s;
+            transform: scale(1.1); }
 
 .main-usuario {
   display: grid;
@@ -308,11 +312,11 @@ body {
   display: flex;
   height: 100%;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   padding: 30px 0;
   background-image: radial-gradient(circle, #2A6AB2, #4B63F8, #273c92, #3C81EB); }
   .main-admin .empleados {
-    width: 70%;
+    width: 76%;
     height: 700px; }
     .main-admin .empleados input {
       width: 25%;
@@ -332,17 +336,15 @@ body {
     .main-admin .empleados .lista-empleados {
       background-color: rgba(53, 110, 156, 0.432);
       width: 100%;
-      height: 100%;
-      border: 2px solid black;
+      height: 92%;
       border: 1px solid #ccc;
       overflow-y: scroll; }
       .main-admin .empleados .lista-empleados ol {
-        text-align: center;
         list-style-type: none;
         padding: 0; }
         .main-admin .empleados .lista-empleados ol li {
           display: grid;
-          grid-template-columns: repeat(6, 17%);
+          grid-template-columns: repeat(5, 20%);
           justify-items: start;
           padding: 10px;
           border-bottom: 1px solid #ddd; }
@@ -350,7 +352,8 @@ body {
             border-bottom: none; }
           .main-admin .empleados .lista-empleados ol li span {
             color: white;
-            margin-right: 35px; }
+            margin-right: 35px;
+            font-size: 1rem; }
           .main-admin .empleados .lista-empleados ol li .aprobados::before {
             font-weight: bold;
             content: "✔ ";
@@ -360,10 +363,9 @@ body {
             content: "x ";
             color: red; }
           .main-admin .empleados .lista-empleados ol li .sueldo {
-            width: 100%;
-            text-align: center;
-            margin-right: 0; }
+            width: 100%; }
         .main-admin .empleados .lista-empleados ol .titulos {
+          align-items: center;
           font-weight: bold;
           text-decoration: 1px underline white; }
   .main-admin .agregar-quitar-admin {
@@ -372,27 +374,29 @@ body {
     flex-direction: column;
     row-gap: 20px;
     height: 95%;
-    justify-content: end; }
-    .main-admin .agregar-quitar-admin a button {
-      font-size: 1.2rem;
-      width: auto;
-      height: 60px;
-      padding: 0 20px;
-      border: 2px solid #161683;
-      border-radius: 20px;
-      background-color: #273c92;
-      color: white;
-      cursor: pointer; }
-      .main-admin .agregar-quitar-admin a button:hover {
-        transform: scale(1.06); }
-    .main-admin .agregar-quitar-admin a .add-button::before {
-      content: "+ ";
-      color: green;
-      font-size: 1.3rem; }
-    .main-admin .agregar-quitar-admin a .remove-button::before {
-      content: "- ";
-      color: red;
-      font-size: 1.3rem; }
+    justify-content: center; }
+    .main-admin .agregar-quitar-admin a {
+      text-decoration: none; }
+      .main-admin .agregar-quitar-admin a button {
+        font-size: 1.2rem;
+        width: auto;
+        height: 60px;
+        padding: 0 20px;
+        border: 2px solid #161683;
+        border-radius: 20px;
+        background-color: #273c92;
+        color: white;
+        cursor: pointer; }
+        .main-admin .agregar-quitar-admin a button:hover {
+          transform: scale(1.06); }
+      .main-admin .agregar-quitar-admin a .add-button::before {
+        content: "+ ";
+        color: green;
+        font-size: 1.3rem; }
+      .main-admin .agregar-quitar-admin a .remove-button::before {
+        content: "- ";
+        color: red;
+        font-size: 1.3rem; }
 
 .footer-admin, .footer-agregar-quitar {
   grid-area: footer-admin; }
@@ -401,7 +405,7 @@ body {
   background-image: radial-gradient(circle, #478bd8, #4e63ec, #506ee6, #638fd1);
   height: 100vh;
   display: grid;
-  grid-template-columns: 1f;
+  grid-template-columns: 1fr;
   grid-template-rows: 60px auto 6%;
   grid-template-areas: "header-agregar-quitar" "main-agregar-quitar" "footer-agregar-quitar"; }
 
@@ -490,11 +494,12 @@ body {
         transform: scale(1.2); }
 
 .footer-seleccion {
-  grid-area: footer;
+  grid-area: footer-seleccion;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  width: 100%;
   font-weight: 500;
   padding: 5px 20px;
   height: auto;
@@ -578,15 +583,26 @@ body {
 
 /*mediaQuerrys*/
 @media (max-width: 1024px) {
-  .body-seleccion .seleccion-botones {
-    width: 45%; }
   .main-usuario .calendario {
     height: 170px; }
     .main-usuario .calendario div {
       width: 95%; }
       .main-usuario .calendario div ol li {
         font-size: 12px;
-        text-align: center; } }
+        text-align: center; }
+  .main-admin {
+    flex-direction: column;
+    padding-top: 20px; }
+    .main-admin .empleados {
+      width: 95%;
+      height: 800px; }
+    .main-admin .agregar-quitar-admin {
+      flex-direction: row;
+      gap: 20px;
+      margin: 20px;
+      height: auto; }
+  .body-seleccion .main-seleccion div a button {
+    font-size: 2.3rem; } }
 
 @media (max-width: 768px) {
   .main-login {
@@ -601,8 +617,6 @@ body {
     .main-login .contenedorForm {
       width: 100%;
       padding: 30px 0; }
-  .body-seleccion .seleccion-botones {
-    width: 60%; }
   .card-user .info div label {
     font-size: 1.2rem; }
   .card-user .info div span {
@@ -614,7 +628,16 @@ body {
     column-gap: 20px;
     background-image: linear-gradient(to right, #5356FF, #378CE7, #378CE7, #5356FF);
     background-repeat: no-repeat;
-    background-size: cover; } }
+    background-size: cover; }
+  .main-admin .empleados .lista-empleados ol li span {
+    font-size: 0.8rem;
+    margin-right: 0px; }
+  .main-admin .agregar-quitar-admin a button {
+    font-size: 0.9rem; }
+  .main-agregar-quitar .contenedor-form-aq {
+    width: 35rem; }
+  .body-seleccion .main-seleccion div {
+    width: 60%; } }
 
 @media (max-width: 425px) {
   .main-login .imgLogin h1 {
@@ -625,10 +648,6 @@ body {
   .main-login .contenedorForm .formLogin {
     width: 85%;
     padding: 30px 20px; }
-  .body-seleccion .seleccion-botones {
-    width: 90%; }
-  .body-seleccion .footer-seleccion {
-    flex-direction: column; }
   .main-usuario {
     grid-template-columns: 1fr;
     grid-template-rows: 38% 42% auto;
@@ -637,7 +656,29 @@ body {
     .main-usuario .calendario div {
       width: 70%; }
   .footer-usuario {
-    flex-direction: column; } }
+    flex-direction: column; }
+  .main-admin .empleados input {
+    width: 45%;
+    font-size: 0.9rem; }
+  .main-admin .empleados .lista-empleados ol li span {
+    font-size: 0.57rem;
+    margin-right: 0px; }
+  .main-admin .agregar-quitar-admin a button {
+    font-size: 0.9rem; }
+  .main-agregar-quitar .contenedor-form-aq {
+    width: 95%; }
+  .footer-admin, .footer-agregar-quitar {
+    flex-direction: column;
+    height: 7.57rem; }
+  .body-seleccion .main-seleccion div {
+    width: 80%;
+    height: 60%;
+    padding: 80px 30px; }
+    .body-seleccion .main-seleccion div a button {
+      font-size: 1.5rem; }
+  .footer-seleccion {
+    flex-direction: column;
+    height: 120px; } }
 
 @media (max-width: 375px) {
   .main-login .contenedorForm .formLogin form h2 {
@@ -646,8 +687,16 @@ body {
     position: relative;
     width: 100%;
     height: 2.8rem;
-    margin: 1.475rem 0; } }
+    margin: 1.475rem 0; }
+  .main-agregar-quitar .contenedor-form-aq form .input-caja div input {
+    width: 49%; } }
 
 @media (max-width: 320px) {
   .main-login .contenedorForm .formLogin form h2 {
-    font-size: 1.6rem; } }
+    font-size: 1.6rem; }
+  .body-seleccion .main-seleccion div {
+    width: 85%;
+    height: 50%;
+    padding: 60px 25px; }
+    .body-seleccion .main-seleccion div a button {
+      font-size: 1.3rem; } }

@@ -15,11 +15,7 @@
             padding: 30px 0;
         }
     }
-    .body-seleccion{
-        .seleccion-botones{
-            width: 60%;
-        }
-    }
+    
     .card-user{
         .info{
             div{
@@ -44,5 +40,41 @@
         background-image: linear-gradient(to right, #5356FF, #378CE7, #378CE7 ,#5356FF);
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    .main-admin{
+        .empleados{
+            .lista-empleados{
+                ol{
+                    li{
+                        span{
+                            font-size: 0.8rem;
+                            margin-right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+        .agregar-quitar-admin{
+            a{
+                button{
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .main-agregar-quitar{
+        .contenedor-form-aq{
+            width: 35rem;
+        }
+    }
+    
+    .body-seleccion{
+        .main-seleccion{
+            div{
+                width: 60%;
+            }
+        }
     }
 }

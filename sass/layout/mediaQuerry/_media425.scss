@@ -17,15 +17,6 @@
         }
     }
 
-    .body-seleccion{
-        .seleccion-botones{
-            width: 90%;
-        }
-        .footer-seleccion{
-            flex-direction: column;
-        }
-    }
-
     .main-usuario{
         grid-template-columns: 1fr;
         grid-template-rows: 38% 42% auto;
@@ -42,7 +33,63 @@
         }
     }
     .footer-usuario{
-        
         flex-direction: column;
+    }
+
+    .main-admin{
+        .empleados{
+            input{
+                width: 45%;
+                font-size: 0.9rem;
+            }
+            .lista-empleados{
+                ol{
+                    li{
+                        span{
+                            font-size: 0.57rem;
+                            margin-right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+        .agregar-quitar-admin{
+            a{
+                button{
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .main-agregar-quitar{
+        .contenedor-form-aq{
+            width: 95%; 
+        }
+    }
+
+    .footer-admin{
+        flex-direction: column;
+        height: 7.57rem;
+    }
+
+    .body-seleccion{
+        .main-seleccion{
+            div{
+                width: 80%;
+                height: 60%;
+                padding: 80px 30px;
+                a{
+                    button{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-seleccion{
+        flex-direction: column;
+        height: 120px;
     }
 }

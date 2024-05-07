@@ -2,7 +2,7 @@
     background-image: radial-gradient(circle, #478bd8, #4e63ec, #506ee6, #638fd1);
     height: 100vh;
     display: grid;
-    grid-template-columns: 1f;
+    grid-template-columns: 1fr;
     grid-template-rows: 60px auto 6%;
     grid-template-areas: 
     "header-agregar-quitar"

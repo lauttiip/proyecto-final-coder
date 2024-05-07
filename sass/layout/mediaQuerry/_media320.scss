@@ -11,4 +11,19 @@
             }
         }
     }
+
+    .body-seleccion{
+        .main-seleccion{
+            div{
+                width: 85%;
+                height: 50%;
+                padding: 60px 25px;
+                a{
+                    button{
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
 }

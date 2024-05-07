@@ -1,3 +1,27 @@
+.header-seleccion{
+    grid-area: header-seleccion;
+    padding: 10px;
+    div{
+        height: 30px;
+        a{
+            display: flex;
+            color: #000000d5;
+            text-decoration: none;
+            height: 100%;
+            h4{
+                height: 100%;
+                font-size: 20px;
+                font-weight: 600;
+            }
+            img{
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+
 .header-user{
     height: 60px;
     background-image: linear-gradient(to right, #378CE7,#5356FF ,#5356FF,#378CE7 );

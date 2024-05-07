@@ -24,11 +24,12 @@
     }
 }
 .footer-seleccion{
-    grid-area: footer;
+    grid-area: footer-seleccion;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    width: 100%;
     font-weight: 500;
     padding: 5px 20px;
     height: auto;
