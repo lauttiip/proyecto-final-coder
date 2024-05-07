@@ -8,9 +8,7 @@
     padding: 5px 20px;
     height: auto;
     background-color: #5356FF;
-    .contact-info{
-        text-align: left;
-    }
+    
     .social-links{
         a{
             height: 100%;
@@ -34,17 +32,19 @@
     font-weight: 500;
     padding: 5px 20px;
     height: auto;
-    background-color: #0c0fa72d; 
+    color: white;
+    background-color: #001831;
+    
 
-    .contact-info{
-        text-align: left;
-    }
+    
     .social-links{
+        display: flex;
         a{
             height: 100%;
             text-decoration: none;
             margin: 0 10px;
             img{
+                
                 width: 30px;
                 &:hover{
                     transform: scale(1.2);
@@ -65,9 +65,7 @@
     height: auto;
     background-color: #2A6AB2; 
 
-    .contact-info{
-        text-align: left;
-    }
+    
     .social-links{
         a{
             height: 100%;
@@ -81,4 +79,9 @@
             }
         }
     }
+}
+.footer-agregar-quitar{
+    @extend .footer-admin;
+    grid-area: footer-agregar-quitar;
+    background-color: #478bd88c;
 }

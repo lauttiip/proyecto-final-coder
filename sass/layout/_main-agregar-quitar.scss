@@ -1,0 +1,95 @@
+.body-agregar-quitar{
+    background-image: radial-gradient(circle, #478bd8, #4e63ec, #506ee6, #638fd1);
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1f;
+    grid-template-rows: 60px auto 6%;
+    grid-template-areas: 
+    "header-agregar-quitar"
+    "main-agregar-quitar"
+    "footer-agregar-quitar";
+}
+
+.main-agregar-quitar{
+    display: grid;
+    place-items: center;
+    .contenedor-form-aq{
+        width: 800px;
+        height: 500px;
+        display: grid;
+        place-items: center;
+        animation-name: fondoRgbForm;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: 0s;
+        @keyframes fondoRgbForm{
+            0%{
+                box-shadow: 0px 0px 22px 20px #478bd8;
+            }
+            50%{
+                box-shadow: 0px 0px 50px 10px #478bd8;
+            }
+            100%{
+                box-shadow: 0px 0px 22px 20px #478bd8;
+            }
+        }
+        form{
+            width: 100%;
+            .input-caja{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                div{
+                    display: flex;
+                    text-align: center;
+                    justify-content: space-between;
+                    width: 80%;
+                    input{
+                        width: 40%;
+                    }
+                }
+                input{
+                    margin: 20px 0;
+                    width: 80%;
+                    height: 35px;
+                    padding: 20px;
+                    border: none;
+                    outline: none;
+                    border-radius: 20px;
+                    background-color: rgba(215, 229, 250, 0.486);
+                    color: rgb(0, 0, 0);
+                    font-size: 1.2rem;
+                    
+                }
+            }
+            .botones-aq{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 20px;
+                width: 100%;
+                height: 50px;
+                input{
+                    border: none;
+                    font-size: 1rem;
+                    border-radius: 5px;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    color: rgba(255, 255, 255, 0.678);
+                    &[type="submit"]{
+                        background-color: rgba(0, 128, 0, 0.568);
+                    }
+                    &[type="button"]{
+                        background-color: rgba(128, 0, 0, 0.568);
+                    }
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+    
+

@@ -46,3 +46,8 @@
     }
 }
 
+.header-agregar-quitar{
+    @extend .header-admin;
+    grid-area: header-agregar-quitar;
+    background-color: #478bd8;
+}

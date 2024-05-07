@@ -1,0 +1,48 @@
+@media(max-width:425px){
+    .main-login{
+        .imgLogin{
+            h1{
+                font-size: 2.2rem;
+            }
+            p{
+                width: 80%;
+                font-size: 1.2rem;
+            }
+        }
+        .contenedorForm{
+            .formLogin{
+                width: 85%;
+                padding: 30px 20px;
+            }
+        }
+    }
+
+    .body-seleccion{
+        .seleccion-botones{
+            width: 90%;
+        }
+        .footer-seleccion{
+            flex-direction: column;
+        }
+    }
+
+    .main-usuario{
+        grid-template-columns: 1fr;
+        grid-template-rows: 38% 42% auto;
+        grid-template-areas: 
+        "card"
+        "sueldo"
+        "calendario";
+        padding-top: 20px;
+        .calendario{
+            div{
+                width: 70%;
+            }
+            
+        }
+    }
+    .footer-usuario{
+        
+        flex-direction: column;
+    }
+}

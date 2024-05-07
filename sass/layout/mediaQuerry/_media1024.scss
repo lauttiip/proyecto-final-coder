@@ -1,0 +1,22 @@
+@media(max-width:1024px){
+    .body-seleccion{
+        .seleccion-botones{
+            width: 45%;
+        }
+    }
+    .main-usuario{
+        .calendario{
+            height: 170px;
+            div{
+                width: 95%;
+                ol{
+                    li{
+                        font-size: 12px;
+                        text-align: center;
+                    }
+                }
+            }
+            
+        }
+    }
+}

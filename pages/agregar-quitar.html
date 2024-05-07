@@ -9,7 +9,62 @@
 </head>
 
 <body class="body-agregar-quitar">
-    
+    <header class="header-agregar-quitar">
+        <div>
+            <a href="../index.html"><img src="../assets/xing-logo-24.png" alt="logo de la empresa"></a>
+            <h2>Administrador</h2>
+            <a href="./seleccion.html"><img src="../assets/bx-log-out.svg" alt="icono de cerrar sesion"></a>
+        </div>
+
+    </header>
+    <main class="main-agregar-quitar">
+        <div class="contenedor-form-aq">
+            <form action="./admin.html" method="post">
+                <div class="input-caja">
+                    <input type="email" id="correo" name="correo" placeholder="Gmail" required>
+
+                    <div>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+                    </div>
+
+                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+
+                    <input type="number" id="dni" name="dni" placeholder="Dni" required>
+
+                    <input type="number" id="sueldo" name="sueldo" placeholder="Sueldo" required>
+                </div>
+
+                <div class="botones-aq">
+                    <input type="submit" value="Agregar" >
+                    <input type="button" value="Cancelar" onclick="window.history.back()">
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer-agregar-quitar">
+        
+        <div class="copyright">
+            <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/TuPagina" target="_blank">
+                <img src="../assets/facebook.svg" alt="icono de facebook">
+            </a>
+            <a href="https://twitter.com/TuPagina" target="_blank">
+                <img src="../assets//instagram.svg" alt="icono de instagram">
+            </a>
+            <a href="https://www.instagram.com/TuPagina" target="_blank">
+                <img src="../assets/twitter.svg" alt="icono de twitter">
+            </a>
+            <a href="www.linkedin.com/in/lautaro-perez-dev" target="_blank">
+                <img src="../assets/bxl-linkedin.svg" alt="icono de linkedin">
+            </a>
+        </div>
+
+    </footer>
 </body>
 
 </html>

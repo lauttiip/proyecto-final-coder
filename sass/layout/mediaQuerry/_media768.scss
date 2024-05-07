@@ -1,0 +1,48 @@
+@media(max-width:768px){
+    .main-login{
+        display: flex;
+        flex-direction: column;
+        .imgLogin{
+            width: 100%;
+            padding-bottom: 20px;
+            h1{
+                height: auto;
+                font-size: 3rem;
+            }
+        }
+        .contenedorForm{
+            width: 100%;
+            padding: 30px 0;
+        }
+    }
+    .body-seleccion{
+        .seleccion-botones{
+            width: 60%;
+        }
+    }
+    .card-user{
+        .info{
+            div{
+                label{
+                    font-size: 1.2rem;
+                }
+                span{
+                    font-weight: 500;
+                }
+            }
+            
+        }
+    }
+
+    .main-usuario{
+        grid-template-columns: 60% auto;
+        grid-template-rows: 60% auto;
+        grid-template-areas: 
+        "sueldo card"
+        "sueldo calendario ";
+        column-gap: 20px;
+        background-image: linear-gradient(to right, #5356FF, #378CE7, #378CE7 ,#5356FF);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

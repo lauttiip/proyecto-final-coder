@@ -28,23 +28,27 @@ body {
       .header-user div a img:hover {
         transform: scale(1.1); }
 
-.header-admin {
+.header-admin, .header-agregar-quitar {
   grid-area: header-admin;
   height: 100%;
   background-color: #3060a8;
   align-content: center; }
-  .header-admin div {
+  .header-admin div, .header-agregar-quitar div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 10px; }
-    .header-admin div h2 {
+    .header-admin div h2, .header-agregar-quitar div h2 {
       color: azure; }
-    .header-admin div a img {
+    .header-admin div a img, .header-agregar-quitar div a img {
       width: 40px;
       filter: drop-shadow(0px 0px 5px #378CE7 1, 37, 136); }
-      .header-admin div a img:hover {
+      .header-admin div a img:hover, .header-agregar-quitar div a img:hover {
         transform: scale(1.1); }
+
+.header-agregar-quitar {
+  grid-area: header-agregar-quitar;
+  background-color: #478bd8; }
 
 .main-login {
   display: flex;
@@ -181,7 +185,7 @@ body {
         transform: scale(1.1); }
   .body-seleccion .seleccion-botones {
     grid-area: botones;
-    width: 25%;
+    width: 35%;
     height: 550px;
     margin: auto;
     display: flex;
@@ -195,6 +199,7 @@ body {
     border-radius: 10px;
     padding: 120px 40px; }
     .body-seleccion .seleccion-botones button {
+      width: 100%;
       padding: 15px 30px;
       background: #020727d5;
       border: none;
@@ -260,20 +265,21 @@ body {
   .main-usuario .calendario {
     display: flex;
     justify-content: center;
-    width: auto;
+    width: 100%;
+    height: 235px;
     margin-top: 30px; }
     .main-usuario .calendario div {
-      justify-self: center;
       grid-area: calendario;
       text-align: center;
       width: 80%;
-      height: 18%;
+      height: 100%;
       box-shadow: 0px 0px 10px #333; }
       .main-usuario .calendario div ol {
         width: 100%;
         list-style: none;
         display: grid;
         grid-template-columns: repeat(7, 1fr);
+        flex-wrap: wrap;
         gap: 5px;
         padding: 0 5px; }
         .main-usuario .calendario div ol li {
@@ -388,8 +394,82 @@ body {
       color: red;
       font-size: 1.3rem; }
 
-.footer-admin {
+.footer-admin, .footer-agregar-quitar {
   grid-area: footer-admin; }
+
+.body-agregar-quitar {
+  background-image: radial-gradient(circle, #478bd8, #4e63ec, #506ee6, #638fd1);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1f;
+  grid-template-rows: 60px auto 6%;
+  grid-template-areas: "header-agregar-quitar" "main-agregar-quitar" "footer-agregar-quitar"; }
+
+.main-agregar-quitar {
+  display: grid;
+  place-items: center; }
+  .main-agregar-quitar .contenedor-form-aq {
+    width: 800px;
+    height: 500px;
+    display: grid;
+    place-items: center;
+    animation-name: fondoRgbForm;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 0s; }
+
+@keyframes fondoRgbForm {
+  0% {
+    box-shadow: 0px 0px 22px 20px #478bd8; }
+  50% {
+    box-shadow: 0px 0px 50px 10px #478bd8; }
+  100% {
+    box-shadow: 0px 0px 22px 20px #478bd8; } }
+    .main-agregar-quitar .contenedor-form-aq form {
+      width: 100%; }
+      .main-agregar-quitar .contenedor-form-aq form .input-caja {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        .main-agregar-quitar .contenedor-form-aq form .input-caja div {
+          display: flex;
+          text-align: center;
+          justify-content: space-between;
+          width: 80%; }
+          .main-agregar-quitar .contenedor-form-aq form .input-caja div input {
+            width: 40%; }
+        .main-agregar-quitar .contenedor-form-aq form .input-caja input {
+          margin: 20px 0;
+          width: 80%;
+          height: 35px;
+          padding: 20px;
+          border: none;
+          outline: none;
+          border-radius: 20px;
+          background-color: rgba(215, 229, 250, 0.486);
+          color: black;
+          font-size: 1.2rem; }
+      .main-agregar-quitar .contenedor-form-aq form .botones-aq {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+        width: 100%;
+        height: 50px; }
+        .main-agregar-quitar .contenedor-form-aq form .botones-aq input {
+          border: none;
+          font-size: 1rem;
+          border-radius: 5px;
+          padding: 10px 20px;
+          cursor: pointer;
+          color: rgba(255, 255, 255, 0.678); }
+          .main-agregar-quitar .contenedor-form-aq form .botones-aq input[type="submit"] {
+            background-color: rgba(0, 128, 0, 0.568); }
+          .main-agregar-quitar .contenedor-form-aq form .botones-aq input[type="button"] {
+            background-color: rgba(128, 0, 0, 0.568); }
+          .main-agregar-quitar .contenedor-form-aq form .botones-aq input:hover {
+            transform: scale(1.1); }
 
 .footer-usuario {
   display: flex;
@@ -400,8 +480,6 @@ body {
   padding: 5px 20px;
   height: auto;
   background-color: #5356FF; }
-  .footer-usuario .contact-info {
-    text-align: left; }
   .footer-usuario .social-links a {
     height: 100%;
     text-decoration: none;
@@ -420,19 +498,20 @@ body {
   font-weight: 500;
   padding: 5px 20px;
   height: auto;
-  background-color: #0c0fa72d; }
-  .footer-seleccion .contact-info {
-    text-align: left; }
-  .footer-seleccion .social-links a {
-    height: 100%;
-    text-decoration: none;
-    margin: 0 10px; }
-    .footer-seleccion .social-links a img {
-      width: 30px; }
-      .footer-seleccion .social-links a img:hover {
-        transform: scale(1.2); }
+  color: white;
+  background-color: #001831; }
+  .footer-seleccion .social-links {
+    display: flex; }
+    .footer-seleccion .social-links a {
+      height: 100%;
+      text-decoration: none;
+      margin: 0 10px; }
+      .footer-seleccion .social-links a img {
+        width: 30px; }
+        .footer-seleccion .social-links a img:hover {
+          transform: scale(1.2); }
 
-.footer-admin {
+.footer-admin, .footer-agregar-quitar {
   grid-area: footer-admin;
   display: flex;
   justify-content: space-between;
@@ -442,16 +521,18 @@ body {
   padding: 5px 20px;
   height: auto;
   background-color: #2A6AB2; }
-  .footer-admin .contact-info {
-    text-align: left; }
-  .footer-admin .social-links a {
+  .footer-admin .social-links a, .footer-agregar-quitar .social-links a {
     height: 100%;
     text-decoration: none;
     margin: 0 10px; }
-    .footer-admin .social-links a img {
+    .footer-admin .social-links a img, .footer-agregar-quitar .social-links a img {
       width: 30px; }
-      .footer-admin .social-links a img:hover {
+      .footer-admin .social-links a img:hover, .footer-agregar-quitar .social-links a img:hover {
         transform: scale(1.2); }
+
+.footer-agregar-quitar {
+  grid-area: footer-agregar-quitar;
+  background-color: #478bd88c; }
 
 .card-user {
   grid-area: card;
@@ -461,7 +542,7 @@ body {
   width: 100%;
   height: 700px; }
   .card-user img {
-    width: 400px;
+    width: 60%;
     animation-name: fondoRgb;
     animation-duration: 3s;
     animation-timing-function: linear;
@@ -469,7 +550,7 @@ body {
     animation-delay: 0s; }
   .card-user .info {
     text-align: center;
-    width: 400px; }
+    width: 70%; }
     .card-user .info div {
       margin: 20px 0 0 10px;
       padding: 2px 7px;
@@ -494,3 +575,79 @@ body {
     filter: drop-shadow(-6px -6px 12px #4D869C); }
   100% {
     filter: drop-shadow(6px -6px 12px #CDE8E5); } }
+
+/*mediaQuerrys*/
+@media (max-width: 1024px) {
+  .body-seleccion .seleccion-botones {
+    width: 45%; }
+  .main-usuario .calendario {
+    height: 170px; }
+    .main-usuario .calendario div {
+      width: 95%; }
+      .main-usuario .calendario div ol li {
+        font-size: 12px;
+        text-align: center; } }
+
+@media (max-width: 768px) {
+  .main-login {
+    display: flex;
+    flex-direction: column; }
+    .main-login .imgLogin {
+      width: 100%;
+      padding-bottom: 20px; }
+      .main-login .imgLogin h1 {
+        height: auto;
+        font-size: 3rem; }
+    .main-login .contenedorForm {
+      width: 100%;
+      padding: 30px 0; }
+  .body-seleccion .seleccion-botones {
+    width: 60%; }
+  .card-user .info div label {
+    font-size: 1.2rem; }
+  .card-user .info div span {
+    font-weight: 500; }
+  .main-usuario {
+    grid-template-columns: 60% auto;
+    grid-template-rows: 60% auto;
+    grid-template-areas: "sueldo card" "sueldo calendario ";
+    column-gap: 20px;
+    background-image: linear-gradient(to right, #5356FF, #378CE7, #378CE7, #5356FF);
+    background-repeat: no-repeat;
+    background-size: cover; } }
+
+@media (max-width: 425px) {
+  .main-login .imgLogin h1 {
+    font-size: 2.2rem; }
+  .main-login .imgLogin p {
+    width: 80%;
+    font-size: 1.2rem; }
+  .main-login .contenedorForm .formLogin {
+    width: 85%;
+    padding: 30px 20px; }
+  .body-seleccion .seleccion-botones {
+    width: 90%; }
+  .body-seleccion .footer-seleccion {
+    flex-direction: column; }
+  .main-usuario {
+    grid-template-columns: 1fr;
+    grid-template-rows: 38% 42% auto;
+    grid-template-areas: "card" "sueldo" "calendario";
+    padding-top: 20px; }
+    .main-usuario .calendario div {
+      width: 70%; }
+  .footer-usuario {
+    flex-direction: column; } }
+
+@media (max-width: 375px) {
+  .main-login .contenedorForm .formLogin form h2 {
+    font-size: 2rem; }
+  .main-login .contenedorForm .formLogin form .input-box {
+    position: relative;
+    width: 100%;
+    height: 2.8rem;
+    margin: 1.475rem 0; } }
+
+@media (max-width: 320px) {
+  .main-login .contenedorForm .formLogin form h2 {
+    font-size: 1.6rem; } }
